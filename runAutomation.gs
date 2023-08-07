@@ -7,6 +7,10 @@
 const spreadsheetID = "";
 const projectID = "";
 
+// Get the personal access token initially set in setToken.gs
+const userProperties = PropertiesService.getUserProperties();
+const pat = userProperties.getProperty('pat');
+
 // ================================================
 // Main function (i.e., entry point)
 // ================================================
@@ -23,10 +27,6 @@ async function runAutomation() {
     Logger.log("Your project GID is invalid. Please check it and try again");
     return;
   }
-
-  // Get the personal access token initially set in setToken.gs
-  const userProperties = PropertiesService.getUserProperties();
-  const pat = userProperties.getProperty('pat');
 
   // Get the user-provided spreadsheet
   const spreadsheet = SpreadsheetApp.openById(spreadsheetID);
