@@ -16,6 +16,12 @@ const pat = userProperties.getProperty('pat');
 // ================================================
 
 async function runAutomation() {
+  // Check for PAT
+  if (!pat) {
+    Logger.log("Please set your PAT in setToken.gs before continuing.");
+    return
+  }
+
   // Check for non-empty inputs
   if (spreadsheetID === "" || projectID === "") {
     Logger.log("Please provide both a spreadsheet ID and project ID to continue.");
