@@ -19,7 +19,7 @@ async function runAutomation() {
   // Check for PAT
   if (!pat) {
     Logger.log("Please set your PAT in setToken.gs before continuing.");
-    return
+    return;
   }
 
   // Check for non-empty inputs
